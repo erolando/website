@@ -49,16 +49,17 @@
                   </div>
                 </div>
                 <ul class="main-nav">
-                  <li><a href="#">Inicio</a></li>
-                  <li><a href="#">Portafolio</a></li>
-                  <li><a href="#">Acerca de mí</a></li>
-                  <li><a href="#">Contacto</a></li>
+                  <li><a href="#" data-i18n="nav.home">Inicio</a></li>
+                  <li><a href="#" data-i18n="nav.portfolio">Portafolio</a></li>
+                  <li><a href="#" data-i18n="nav.about">Acerca de mí</a></li>
+                  <li><a href="#" data-i18n="nav.contact">Contacto</a></li>
                 </ul>
+                <button id="lang-toggle" class="btn btn-sm btn-default">EN</button>
               </nav>
               <!-- <a href="#" class="menu"><img src="assets/menu.png"></a> -->
               <div class="hero-text">
-                <h1><span>Hola, yo soy</span><br>Rolando Avila.</h1>
-                <h3>Desarrollador Senior iOS (Swift,Obj-C, SwiftUI) y C#</h3>
+                <h1><span data-i18n="hero.greeting">Hola, yo soy</span><br>Rolando Avila.</h1>
+                <h3 data-i18n="hero.title">Desarrollador Senior iOS (Swift,Obj-C, SwiftUI) y C#</h3>
 <!--                 <a href="#" class="btn btn-lg btn-primary">Saber más</a> -->
                
               </div>
@@ -73,7 +74,7 @@
           <div >
             <div class="col-md-12">
                 <ul class="social-links">
-                  <li class="label">Redes Sociales</li>
+                  <li class="label" data-i18n="social.label">Redes Sociales</li>
                   <li><a href="https://twitter.com/erolando"><i class="fa fa-twitter" style="font-size:3em; color: purple"></i></a></li>     
                   <li><a href="https://www.linkedin.com/in/erolandoaq/"><i class="fa fa-linkedin" style="font-size:3em; color: purple"></i></a></li>
                   <li><a href="https://github.com/erolando"><i class="fa fa-github-alt" style="font-size:3em; color: purple"></i></a></li>
@@ -83,37 +84,37 @@
           
           <div class="row">
             <div class="col-md-12">
-              <h4 class="sub-heading">Tus ideas convertidas en</h4>
-              <h1 class="heading purple"><span class="purple">REALIDAD</span> <br></h1>
+              <h4 class="sub-heading" data-i18n="projects.subtitle">Tus ideas convertidas en</h4>
+              <h1 class="heading purple"><span class="purple" data-i18n="projects.title">REALIDAD</span> <br></h1>
               <!-- Swiper -->
               <div class="swiper-container client-swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide client-box">
                     <img src="assets/proyectos/appRD.jpg" class="client-logo">
-                    <h3 class="text-left title">App Ruta Directa</h3>
-                    <p class="text-left tag">iPhone, iPad - Mapas, GPS</p>
-                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/mx/app/rutadirecta/id961178858?mt=8">App Store &#8594;</a></p>
+              <h3 class="text-left title" data-i18n="projects.app1.title">App Ruta Directa</h3>
+                    <p class="text-left tag" data-i18n="projects.app1.tech">iPhone, iPad - Mapas, GPS</p>
+                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/mx/app/rutadirecta/id961178858?mt=8" data-i18n="projects.app1.link">App Store &#8594;</a></p>
                   </div>                
                    <div class="swiper-slide client-box">
                     <img src="assets/proyectos/appEventos.png" class="client-logo">
-                    <h3 class="text-left title">App Eventos Grainger</h3>
-                    <p class="text-left tag">iPhone, iPad - Calendario</p>
-                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/mx/app/eventos/id968436650?l=en&mt=8">App Store &#8594;</a></p>
+                    <h3 class="text-left title" data-i18n="projects.app2.title">App Eventos Grainger</h3>
+                    <p class="text-left tag" data-i18n="projects.app2.tech">iPhone, iPad - Calendario</p>
+                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/mx/app/eventos/id968436650?l=en&mt=8" data-i18n="projects.app2.link">App Store &#8594;</a></p>
                   </div>
                   <div class="swiper-slide client-box">
                     <img src="assets/proyectos/appCotizador.png" class="client-logo">
-                    <h3 class="text-left title">App Cotizador Grainger</h3>
-                    <p class="text-left tag">iPhone, iPad - QR</p>
-                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/us/app/cotizador-grainger/id1170729538?l=es&mt=8">App Store &#8594;</a></p>
+                    <h3 class="text-left title" data-i18n="projects.app3.title">App Cotizador Grainger</h3>
+                    <p class="text-left tag" data-i18n="projects.app3.tech">iPhone, iPad - QR</p>
+                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/us/app/cotizador-grainger/id1170729538?l=es&mt=8" data-i18n="projects.app3.link">App Store &#8594;</a></p>
                   </div>
                   <div class="swiper-slide client-box">
                     <img src="assets/proyectos/appUANL80.png" class="client-logo">
-                    <h3 class="text-left title">App UANL 80 Aniversario</h3>
-                    <p class="text-left tag">iPhone, iPad</p>
-                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/us/app/uanl-80-aniversario/id642569143?l=es&mt=8">App Store &#8594;</a></p>
+                    <h3 class="text-left title" data-i18n="projects.app4.title">App UANL 80 Aniversario</h3>
+                    <p class="text-left tag" data-i18n="projects.app4.tech">iPhone, iPad</p>
+                    <p class="text-left"><a target="_blank" href="https://itunes.apple.com/us/app/uanl-80-aniversario/id642569143?l=es&mt=8" data-i18n="projects.app4.link">App Store &#8594;</a></p>
                   </div>
                   <div class="swiper-slide client-box">
-                    <h3 class="text-left title">Entre otros privados...</h3>                   
+                    <h3 class="text-left title" data-i18n="projects.private">Entre otros privados...</h3>                   
                   </div> 
                 </div>
                 
@@ -136,15 +137,15 @@
           <div class="row">
             <div class="col-md-4 text-center stat-box">
               <h1 class="purple"><span class="counter">23</span>k</h1>
-              <h3>Horas</h3>
+              <h3 data-i18n="stats.hours">Horas</h3>
             </div>
             <div class="col-md-4 text-center stat-box">
               <h1 class="blue counter">8</h1>
-              <h3>Projectos</h3>
+              <h3 data-i18n="stats.projects">Projectos</h3>
             </div>
             <div class="col-md-4 text-center stat-box">
               <h1 class="pink"><span class="counter">1</span>k</h1>
-              <h3>Tazas de café</h3>
+              <h3 data-i18n="stats.coffee">Tazas de café</h3>
             </div>
           </div>
         </div>
@@ -155,14 +156,14 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1>Háblame de tu idea</h1>
-              <a href="mailto:erolandoaq@gmail.com" class="btn btn-lg btn-primary">Enviar correo</a>
+              <h1 data-i18n="contact.title">Háblame de tu idea</h1>
+              <a href="#" id="email-link" class="btn btn-lg btn-primary" data-i18n="contact.email">Enviar correo</a>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
                 <h1></h1>
-              <a href="http://wa.me/528136387867?text=Hola" class="btn btn-lg btn-success">Enviar whatsapp</a>
+              <a href="#" id="whatsapp-link" class="btn btn-lg btn-success" data-i18n="contact.whatsapp">Enviar whatsapp</a>
             </div>
           </div>
         </div>
@@ -183,7 +184,7 @@
           </div>
           <div class="row sub-footer">
             <div class="col-md-12 text-center">
-              <p>Designed by <a href="#" target="_blank">@realvjy</a></p>
+              <p data-i18n="footer.design">Designed by</p> <a href="#" target="_blank">@realvjy</a>
             </div>
           </div>
         </div>
@@ -250,6 +251,100 @@
       <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
       <script src="js/jquery.counterup.min.js"></script>
       <script>
+      // Internationalization
+      const translations = {
+        es: {
+          'nav.home': 'Inicio',
+          'nav.portfolio': 'Portafolio',
+          'nav.about': 'Acerca de mí',
+          'nav.contact': 'Contacto',
+          'hero.greeting': 'Hola, yo soy',
+          'hero.title': 'Desarrollador Senior iOS (Swift,Obj-C, SwiftUI) y C#',
+          'social.label': 'Redes Sociales',
+          'projects.subtitle': 'Tus ideas convertidas en',
+          'projects.title': 'REALIDAD',
+          'projects.app1.title': 'App Ruta Directa',
+          'projects.app1.tech': 'iPhone, iPad - Mapas, GPS',
+          'projects.app1.link': 'App Store →',
+          'projects.app2.title': 'App Eventos Grainger',
+          'projects.app2.tech': 'iPhone, iPad - Calendario',
+          'projects.app2.link': 'App Store →',
+          'projects.app3.title': 'App Cotizador Grainger',
+          'projects.app3.tech': 'iPhone, iPad - QR',
+          'projects.app3.link': 'App Store →',
+          'projects.app4.title': 'App UANL 80 Aniversario',
+          'projects.app4.tech': 'iPhone, iPad',
+          'projects.app4.link': 'App Store →',
+          'projects.private': 'Entre otros privados...',
+          'stats.hours': 'Horas',
+          'stats.projects': 'Projectos',
+          'stats.coffee': 'Tazas de café',
+          'contact.title': 'Háblame de tu idea',
+          'contact.email': 'Enviar correo',
+          'contact.whatsapp': 'Enviar whatsapp',
+          'footer.design': 'Designed by'
+        },
+        en: {
+          'nav.home': 'Home',
+          'nav.portfolio': 'Portfolio',
+          'nav.about': 'About Me',
+          'nav.contact': 'Contact',
+          'hero.greeting': 'Hi, I am',
+          'hero.title': 'Senior iOS Developer (Swift,Obj-C, SwiftUI) and C#',
+          'social.label': 'Social Networks',
+          'projects.subtitle': 'Your ideas turned into',
+          'projects.title': 'REALITY',
+          'projects.app1.title': 'App Ruta Directa',
+          'projects.app1.tech': 'iPhone, iPad - Maps, GPS',
+          'projects.app1.link': 'App Store →',
+          'projects.app2.title': 'App Eventos Grainger',
+          'projects.app2.tech': 'iPhone, iPad - Calendar',
+          'projects.app2.link': 'App Store →',
+          'projects.app3.title': 'App Cotizador Grainger',
+          'projects.app3.tech': 'iPhone, iPad - QR',
+          'projects.app3.link': 'App Store →',
+          'projects.app4.title': 'App UANL 80 Anniversary',
+          'projects.app4.tech': 'iPhone, iPad',
+          'projects.app4.link': 'App Store →',
+          'projects.private': 'Among other private projects...',
+          'stats.hours': 'Hours',
+          'stats.projects': 'Projects',
+          'stats.coffee': 'Cups of coffee',
+          'contact.title': 'Tell me about your idea',
+          'contact.email': 'Send email',
+          'contact.whatsapp': 'Send whatsapp',
+          'footer.design': 'Designed by'
+        }
+      };
+
+      let currentLang = localStorage.getItem('language') || 
+                       (navigator.language.startsWith('es') ? 'es' : 'en');
+
+      function updateLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+        
+        // Update language toggle button
+        document.getElementById('lang-toggle').textContent = lang === 'es' ? 'EN' : 'ES';
+      }
+
+      // Language toggle functionality
+      $('#lang-toggle').click(function() {
+        const newLang = currentLang === 'es' ? 'en' : 'es';
+        updateLanguage(newLang);
+      });
+
+      // Initialize language on page load
+      updateLanguage(currentLang);
+
       // Counterup
       $('.counter').counterUp({
         time: 1000
@@ -260,6 +355,22 @@
         $(this).toggleClass('open'),
         $('.main-nav').toggleClass('show-it');
       })
+
+      // Email obfuscation
+      $('#email-link').click(function(e) {
+        e.preventDefault();
+        var user = 'developer';
+        var domain = 'erolando.com';
+        window.location.href = 'mailto:' + user + '@' + domain;
+      });
+
+      // WhatsApp obfuscation
+      $('#whatsapp-link').click(function(e) {
+        e.preventDefault();
+        var phone = '528136387867';
+        var message = currentLang === 'es' ? 'Hola' : 'Hello';
+        window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank');
+      });
       </script>
     </body>
     </html>
