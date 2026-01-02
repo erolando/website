@@ -341,7 +341,7 @@
             background: var(--gradient);
             display: grid;
             place-items: center;
-            color: white;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 800;
         }
 
@@ -498,6 +498,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            background: white;
         }
 
         .project-content {
@@ -508,6 +509,24 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .project-meta .company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .project-meta .role {
+            color: var(--dark-secondary);
+            font-weight: 500;
         }
 
         .project-tech {
@@ -1005,15 +1024,15 @@
 
                     <div class="skill">
                         <div class="skill-row">
-                            <div class="skill-name">SwiftUI</div>
-                            <div class="skill-meta" data-i18n="expertise.level.advanced">Advanced Level</div>
+                            <div class="skill-name">.NET Core</div>
+                            <div class="skill-meta" data-i18n="expertise.level.expert">Expert Level</div>
                         </div>
                         <div class="bar"><span data-progress="90"></span></div>
                     </div>
 
                     <div class="skill">
                         <div class="skill-row">
-                            <div class="skill-name">Objective-C</div>
+                            <div class="skill-name">SwiftUI</div>
                             <div class="skill-meta" data-i18n="expertise.level.advanced">Advanced Level</div>
                         </div>
                         <div class="bar"><span data-progress="85"></span></div>
@@ -1022,7 +1041,23 @@
                     <div class="skill">
                         <div class="skill-row">
                             <div class="skill-name">C#</div>
-                            <div class="skill-meta" data-i18n="expertise.level.intermediate">Intermediate Level</div>
+                            <div class="skill-meta" data-i18n="expertise.level.advanced">Advanced Level</div>
+                        </div>
+                        <div class="bar"><span data-progress="85"></span></div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-row">
+                            <div class="skill-name">Objective-C</div>
+                            <div class="skill-meta" data-i18n="expertise.level.advanced">Advanced Level</div>
+                        </div>
+                        <div class="bar"><span data-progress="80"></span></div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-row">
+                            <div class="skill-name">SQL Server</div>
+                            <div class="skill-meta" data-i18n="expertise.level.advanced">Advanced Level</div>
                         </div>
                         <div class="bar"><span data-progress="80"></span></div>
                     </div>
@@ -1037,6 +1072,12 @@
                         <span class="chip"><i class="fas fa-database"></i><span data-i18n="skills.core_data">Core Data</span></span>
                         <span class="chip"><i class="fas fa-calendar"></i><span data-i18n="skills.eventkit">EventKit</span></span>
                         <span class="chip"><i class="fas fa-bell"></i><span data-i18n="skills.notifications">Push Notifications</span></span>
+                        <span class="chip"><i class="fas fa-project-diagram"></i><span data-i18n="skills.entity_framework">Entity Framework</span></span>
+                        <span class="chip"><i class="fas fa-plug"></i><span data-i18n="skills.graphql">GraphQL</span></span>
+                        <span class="chip"><i class="fas fa-network-wired"></i><span data-i18n="skills.rest_api">REST APIs</span></span>
+                        <span class="chip"><i class="fas fa-vial"></i><span data-i18n="skills.testing">Unit Testing</span></span>
+                        <span class="chip"><i class="fas fa-rocket"></i><span data-i18n="skills.cicd">CI/CD</span></span>
+                        <span class="chip"><i class="fab fa-azure"></i><span data-i18n="skills.azure">Azure DevOps</span></span>
                     </div>
                 </div>
             </div>
@@ -1176,7 +1217,7 @@
                 'stats.hours': 'Horas de Código',
                 'stats.projects': 'Proyectos',
                 'stats.years': 'Años de Experiencia',
-                'stats.coffee': 'Tazas de Café',
+                'stats.apps': 'Apps Lanzadas',
                 'expertise.kicker': 'Experiencia Técnica',
                 'expertise.title': 'Experiencia Técnica',
                 'expertise.subtitle': 'Especializado en tecnologías modernas de desarrollo móvil',
@@ -1191,6 +1232,12 @@
                 'skills.core_data': 'Core Data',
                 'skills.eventkit': 'EventKit',
                 'skills.notifications': 'Notificaciones Push',
+                'skills.entity_framework': 'Entity Framework',
+                'skills.graphql': 'GraphQL',
+                'skills.rest_api': 'REST APIs',
+                'skills.testing': 'Unit Testing',
+                'skills.cicd': 'CI/CD',
+                'skills.azure': 'Azure DevOps',
                 'projects.title': 'Proyectos Destacados',
                 'projects.subtitle': 'Aplicaciones móviles que he desarrollado',
                 'projects.view': 'Ver en',
@@ -1253,7 +1300,7 @@
                 'stats.hours': 'Hours of Code',
                 'stats.projects': 'Projects',
                 'stats.years': 'Years of Experience',
-                'stats.coffee': 'Cups of Coffee',
+                'stats.apps': 'Apps Released',
                 'expertise.kicker': 'Technical Expertise',
                 'expertise.title': 'Technical Expertise',
                 'expertise.subtitle': 'Specialized in modern mobile development technologies',
@@ -1268,6 +1315,12 @@
                 'skills.core_data': 'Core Data',
                 'skills.eventkit': 'EventKit',
                 'skills.notifications': 'Push Notifications',
+                'skills.entity_framework': 'Entity Framework',
+                'skills.graphql': 'GraphQL',
+                'skills.rest_api': 'REST APIs',
+                'skills.testing': 'Unit Testing',
+                'skills.cicd': 'CI/CD',
+                'skills.azure': 'Azure DevOps',
                 'projects.title': 'Featured Projects',
                 'projects.subtitle': 'Mobile apps I\'ve developed',
                 'projects.view': 'View on',
@@ -1353,6 +1406,101 @@
         // Projects data and rendering
         const projects = [
             {
+                id: 'app-capital-one',
+                featured: false,
+                title: { es: 'App Capital One', en: 'App Capital One' },
+                tech: { es: 'iPhone, iPad - GraphQL, Unit Testing', en: 'iPhone, iPad - GraphQL, Unit Testing' },
+                image: 'assets/proyectos/appCapitalOne.png',
+                appStoreUrl: 'https://apps.apple.com/us/app/capital-one-mobile/id407558537',
+                role: 'iOS Developer',
+                hero: {
+                    title: { es: 'App Capital One', en: 'App Capital One' },
+                    subtitle: { es: 'Auto Loan Team - Préstamos Automotrices', en: 'Auto Loan Team - Auto Loans' },
+                    description: { es: 'Integración de funcionalidades para préstamos automotrices: pagos, transacciones, vehículos con pérdida total, liquidaciones y tarjetas de débito con GraphQL API y 80% cobertura de pruebas unitarias.', en: 'Integration of auto loan functionalities: payments, transactions, total loss vehicles, settlements and debit cards with GraphQL API and 80% unit test coverage.' },
+                    chips: [
+                        { icon: 'fa-building-columns', key: 'hero.featured_app.chip1' },
+                        { icon: 'fa-chart-line', key: 'hero.featured_app.chip2' },
+                        { icon: 'fa-credit-card', key: 'hero.featured_app.chip3' }
+                    ]
+                }
+            },
+            {
+                id: 'app-walmart',
+                featured: false,
+                title: { es: 'App Walmart', en: 'App Walmart' },
+                tech: { es: 'iPhone, iPad - MVP, CI/CD, Jenkins', en: 'iPhone, iPad - MVP, CI/CD, Jenkins' },
+                image: 'assets/proyectos/appWalmart.png',
+                appStoreUrl: 'https://apps.apple.com/us/app/walmart-shopping-savings/id338137227',
+                role: 'iOS Developer',
+                hero: {
+                    title: { es: 'App Walmart', en: 'App Walmart' },
+                    subtitle: { es: 'Engagement and Retention Team', en: 'Engagement and Retention Team' },
+                    description: { es: 'Diseño de soluciones para módulo de búsqueda y flujo Walmart Plus: productos similares, anuncios, membresías y perfiles de usuario con arquitectura MVP y CI/CD con Jenkins.', en: 'Design of solutions for search module and Walmart Plus flow: similar products, ads, memberships and user profiles with MVP architecture and CI/CD with Jenkins.' },
+                    chips: [
+                        { icon: 'fa-shopping-cart', key: 'hero.featured_app.chip1' },
+                        { icon: 'fa-box', key: 'hero.featured_app.chip2' },
+                        { icon: 'fa-tag', key: 'hero.featured_app.chip3' }
+                    ]
+                }
+            },
+            {
+                id: 'app-todopago',
+                featured: false,
+                title: { es: 'App TodoPago', en: 'App TodoPago' },
+                tech: { es: 'iPhone, iPad - MVVM, RxSwift, Firebase', en: 'iPhone, iPad - MVVM, RxSwift, Firebase' },
+                image: 'assets/proyectos/appTodoPago.png',
+                appStoreUrl: 'https://apps.apple.com/ar/app/todopago/id1541404413',
+                role: 'iOS Developer',
+                hero: {
+                    title: { es: 'App TodoPago', en: 'App TodoPago' },
+                    subtitle: { es: 'Prisma Account - Pagos QR', en: 'Prisma Account - QR Payments' },
+                    description: { es: 'Implementación de pagos con QR, historial de transferencias y transferencias utilizando arquitectura MVVM con RxSwift y distribución mediante Firebase.', en: 'Implementation of QR payments, transfer history and transfers using MVVM architecture with RxSwift and distribution via Firebase.' },
+                    chips: [
+                        { icon: 'fa-credit-card', key: 'hero.featured_app.chip1' },
+                        { icon: 'fa-qrcode', key: 'hero.featured_app.chip2' },
+                        { icon: 'fa-exchange-alt', key: 'hero.featured_app.chip3' }
+                    ]
+                }
+            },
+            {
+                id: 'app-banregio',
+                featured: false,
+                title: { es: 'App Banregio', en: 'App Banregio' },
+                tech: { es: 'iPhone, iPad - White Label, Apple Wallet, CoDi', en: 'iPhone, iPad - White Label, Apple Wallet, CoDi' },
+                image: 'assets/proyectos/appBanregio.png',
+                appStoreUrl: 'https://apps.apple.com/us/app/hey-banco/id1335704361',
+                role: 'Leader iOS Developer',
+                hero: {
+                    title: { es: 'App Banregio', en: 'App Banregio' },
+                    subtitle: { es: 'Hey Banco / Banregio - White Label', en: 'Hey Banco / Banregio - White Label' },
+                    description: { es: 'Líder de desarrollo de proyecto White Label para lanzar dos apps con misma base de código pero diferente diseño. Implementación de Apple Wallet, flujos de seguridad para firma de transacciones y sistema de pagos CoDi.', en: 'Development leader of White Label project to launch two apps with same codebase but different design. Implementation of Apple Wallet, security flows for transaction signing and CoDi payment system.' },
+                    chips: [
+                        { icon: 'fa-university', key: 'hero.featured_app.chip1' },
+                        { icon: 'fa-credit-card', key: 'hero.featured_app.chip2' },
+                        { icon: 'fa-shield-halved', key: 'hero.featured_app.chip3' }
+                    ]
+                }
+            },
+            {
+                id: 'app-periodico-norte',
+                featured: false,
+                title: { es: 'App Periódico El Norte', en: 'App Periódico El Norte' },
+                tech: { es: 'iPhone, iPad, Apple Watch, Swift Migration', en: 'iPhone, iPad, Apple Watch, Swift Migration' },
+                image: 'assets/proyectos/appElNorte.png',
+                appStoreUrl: 'https://apps.apple.com/mx/app/el-norte/id322378564',
+                role: 'iOS Developer',
+                hero: {
+                    title: { es: 'App Periódico El Norte', en: 'App Periódico El Norte' },
+                    subtitle: { es: 'Apple Watch OS & Swift Migration', en: 'Apple Watch OS & Swift Migration' },
+                    description: { es: 'Creación de app para Apple Watch OS y liderazgo de migración de Objective-C a Swift. Integración de nueva sección "Favoritos" en la app del periódico.', en: 'Creation of Apple Watch OS app and leadership of Objective-C to Swift migration. Integration of new "Favorites" section in the newspaper app.' },
+                    chips: [
+                        { icon: 'fa-newspaper', key: 'hero.featured_app.chip1' },
+                        { icon: 'fa-clock', key: 'hero.featured_app.chip2' },
+                        { icon: 'fa-star', key: 'hero.featured_app.chip3' }
+                    ]
+                }
+            },
+            {
                 id: 'app-ruta-directa',
                 featured: false,
                 title: { es: 'App Ruta Directa', en: 'App Ruta Directa' },
@@ -1360,6 +1508,8 @@
                 image: 'assets/proyectos/appRD.jpg',
                 appStoreUrl: 'https://itunes.apple.com/mx/app/rutadirecta/id961178858?mt=8',
                 icon: 'fa-map-location-dot',
+                company: 'Grupo Reforma',
+                role: 'iOS Developer',
                 hero: {
                     title: { es: 'App Ruta Directa', en: 'App Ruta Directa' },
                     subtitle: { es: 'Tu compañero de rutas y navegación', en: 'Your routes & navigation companion' },
@@ -1379,6 +1529,8 @@
                 image: 'assets/proyectos/appEventos.png',
                 appStoreUrl: 'https://itunes.apple.com/mx/app/eventos/id968436650?l=en&mt=8',
                 icon: 'fa-calendar',
+                company: 'Grainger',
+                role: 'iOS Developer',
                 hero: {
                     title: { es: 'App Eventos Grainger', en: 'App Eventos Grainger' },
                     subtitle: { es: 'Gestiona eventos y calendarios', en: 'Manage events and calendars' },
@@ -1398,6 +1550,8 @@
                 image: 'assets/proyectos/appCotizador.png',
                 appStoreUrl: 'https://itunes.apple.com/us/app/cotizador-grainger/id1170729538?l=es&mt=8',
                 icon: 'fa-qrcode',
+                company: 'Grainger',
+                role: 'iOS Developer',
                 hero: {
                     title: { es: 'App Cotizador Grainger', en: 'App Cotizador Grainger' },
                     subtitle: { es: 'Cotizaciones rápidas con QR', en: 'Quick quotes with QR' },
@@ -1417,6 +1571,8 @@
                 image: 'assets/proyectos/appUANL80.png',
                 appStoreUrl: 'https://itunes.apple.com/us/app/uanl-80-aniversario/id642569143?l=es&mt=8',
                 icon: 'fa-mobile-screen',
+                company: 'UANL',
+                role: 'Leader iOS Developer',
                 hero: {
                     title: { es: 'App UANL 80 Aniversario', en: 'App UANL 80 Anniversary' },
                     subtitle: { es: 'Celebrando 80 años de historia', en: 'Celebrating 80 years of history' },
@@ -1442,6 +1598,10 @@
                     <img src="${project.image}" alt="${project.title[currentLang]}" class="project-image">
                     <div class="project-content">
                         <h3 class="project-title">${project.title[currentLang]}</h3>
+                        <div class="project-meta">
+                            <span class="company">${project.company}</span>
+                            <span class="role">${project.role}</span>
+                        </div>
                         <p class="project-tech">
                             <i class="fas ${project.icon}" aria-hidden="true"></i>
                             <span>${project.tech[currentLang]}</span>
