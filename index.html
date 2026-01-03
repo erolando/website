@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Web3Forms Free Contact Form</title>
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <title>Contact Form</title>
 </head>
 
 <body>
 
     <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="fb404297-b709-4def-b964-077382e3134f">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea>
+        <textarea name="message" required></textarea>
 
         <div class="h-captcha" data-captcha="true"></div>
 
         <button type="submit">Submit Form</button>
     </form>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 
