@@ -522,6 +522,9 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
             border: 1px solid var(--card-border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -539,6 +542,7 @@
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
         }
 
         .spacer {
@@ -588,6 +592,14 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1rem;
+        }
+
+        .project-info {
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            margin-bottom: 0.25rem;
         }
 
         .project-link {
@@ -1925,6 +1937,10 @@
                     <div class="project-content">
                         <h3 class="project-title">${project.title[currentLang]}</h3>
                         <p class="project-description">${project.description[currentLang]}</p>
+                        <div class="project-info">
+                            <p><strong>Company:</strong> ${project.company}</p>
+                            <p><strong>Role:</strong> ${project.role}</p>
+                        </div>
                         <div class="project-chips">
                             ${project.chips.map((chip, index) => `
                                 <span class="chip" title="${chip.title}">
@@ -1933,10 +1949,6 @@
                             `).join('')}
                         </div>
                         <div class="spacer"></div>
-                        <div class="project-info">
-                            <p><strong>Company:</strong> ${project.company}</p>
-                            <p><strong>Role:</strong> ${project.role}</p>
-                        </div>
                         <div class="project-actions">
                             <a href="${project.siteUrl}" target="_blank" class="btn btn-primary">
                                 <i class="fas fa-external-link-alt"></i>
