@@ -1178,40 +1178,29 @@
                     <span data-i18n="contact.success">¡Mensaje enviado con éxito!</span>
                 </div>
 
-                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="fb404297-b709-4def-b964-077382e3134f">
+                    <input type="text" name="name" required>
+                    <input type="email" name="email" required>
+                    <textarea name="message" required></textarea>
 
-                    <div class="form-group">
-                        <label for="name" data-i18n="contact.name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
+                    <! -- Step 1: Add this line -->
+                        <div class="h-captcha" data-captcha="true" data-sitekey="0138c29a-1c62-49b6-8d9a-8014e9ce0a6e">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="email" data-i18n="contact.email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" data-i18n="contact.message">Mensaje</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-
-                    <!-- hCaptcha Widget -->
-                    <div class="h-captcha" data-sitekey="0138c29a-1c62-49b6-8d9a-8014e9ce0a6e"></div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-                        <i class="fas fa-paper-plane"></i>
-                        <span data-i18n="contact.send">Enviar Mensaje</span>
-                    </button>
+                        <button type="submit">Submit Form</button>
                 </form>
 
-                <div class="contact-buttons">
+                <! -- Step 2: Add the script -->
+                    <script src="https://web3forms.com/client/script.js" async defer></script>
 
-                    <a href="#" id="whatsapp-link" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                        <span data-i18n="contact.whatsapp">WhatsApp</span>
-                    </a>
-                </div>
+                    <div class="contact-buttons">
+
+                        <a href="#" id="whatsapp-link" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-i18n="contact.whatsapp">WhatsApp</span>
+                        </a>
+                    </div>
             </div>
         </div>
     </section>
