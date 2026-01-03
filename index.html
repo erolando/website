@@ -1379,6 +1379,7 @@
                 'contact.success': '¡Mensaje enviado con éxito!',
                 'contact.email_alt': 'Enviar Correo',
                 'contact.whatsapp': 'WhatsApp',
+                'contact.whatsapp_message': 'Hola Rolando, estoy interesado en tu CV',
                 'footer.copyright': '© 2026 Erick Rolando Avila Quiroz. Todos los derechos reservados.',
                 'footer.design': 'Diseñado con ❤️ por Erick Rolando Avila Quiroz'
             },
@@ -1462,6 +1463,7 @@
                 'contact.success': 'Message sent successfully!',
                 'contact.email_alt': 'Send Email',
                 'contact.whatsapp': 'WhatsApp',
+                'contact.whatsapp_message': 'Hello Rolando, I am interested in your CV',
                 'footer.copyright': '© 2026 Erick Rolando Avila Quiroz. All rights reserved.',
                 'footer.design': 'Designed with ❤️ by Erick Rolando Avila Quiroz'
             }
@@ -1830,7 +1832,7 @@
             e.preventDefault();
             const phone = '528136';
             const phone2 = '387867';
-            const message = currentLang === 'es' ? 'Hola' : 'Hello';
+            const message = translations[currentLang]['contact.whatsapp_message'];
             window.open('https://wa.me/' + phone + phone2 + '?text=' + encodeURIComponent(message), '_blank');
         });
 
