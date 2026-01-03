@@ -1121,8 +1121,7 @@
     </section>
 
     <section class="section expertise" id="about">
-        <div class="container">
-            <div class="kicker" data-i18n="expertise.kicker">Technical Expertise</div>
+        <div class="container">            
             <h2 class="section-title"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i><span
                     class="section-title-text" data-i18n="expertise.title">Experiencia Técnica</span></h2>
             <p class="section-subtitle" data-i18n="expertise.subtitle">Especializado en tecnologías modernas de
@@ -1221,6 +1220,15 @@
         <p class="section-subtitle" data-i18n="projects.subtitle">Aplicaciones móviles que he desarrollado</p>
 
         <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- Web Projects Section -->
+    <section class="projects" id="web-projects">
+        <h2 class="section-title"><i class="fas fa-globe" aria-hidden="true"></i><span class="section-title-text"
+                data-i18n="web.title">Sistemas Web</span></h2>
+        <p class="section-subtitle" data-i18n="web.subtitle">Aplicaciones web que he desarrollado</p>
+
+        <div class="projects-grid" id="web-projects-grid"></div>
     </section>
 
     <section class="section process" id="process">
@@ -1375,6 +1383,9 @@
                 'projects.subtitle': 'Aplicaciones móviles que he desarrollado',
                 'projects.view': 'Ver en',
                 'projects.featured': 'Destacado',
+                'web.title': 'Sistemas Web',
+                'web.subtitle': 'Aplicaciones web que he desarrollado',
+                'web.view': 'Visitar sitio',
                 'projects.app1.title': 'App Ruta Directa',
                 'projects.app1.tech': 'iPhone, iPad - Mapas, GPS',
                 'projects.app2.title': 'App Eventos Grainger',
@@ -1459,6 +1470,9 @@
                 'projects.subtitle': 'Mobile apps I\'ve developed',
                 'projects.view': 'View on',
                 'projects.featured': 'Featured',
+                'web.title': 'Web Systems',
+                'web.subtitle': 'Web applications I\'ve developed',
+                'web.view': 'Visit site',
                 'projects.app1.title': 'App Ruta Directa',
                 'projects.app1.tech': 'iPhone, iPad - Maps, GPS',
                 'projects.app2.title': 'App Eventos Grainger',
@@ -1749,6 +1763,48 @@
             }
         ];
 
+        // Web Projects
+        const webProjects = [
+            {
+                id: 'web-sntss',
+                title: { es: 'SNTSS App', en: 'SNTSS App' },
+                tech: { 
+                    es: '.NET Core 8.0, ASP.NET Core, Dapper, SQL Server, SignalR, JWT, Swagger/OpenAPI, Sentry, Mailgun, Redis, EPPlus, ClosedXML, Razor Pages, Bootstrap 5, Tabler UI, jQuery, DataTables, AspNetCoreRateLimit, Unit testing, CI/CD', 
+                    en: '.NET Core 8.0, ASP.NET Core, Dapper, SQL Server, SignalR, JWT, Swagger/OpenAPI, Sentry, Mailgun, Redis, EPPlus, ClosedXML, Razor Pages, Bootstrap 5, Tabler UI, jQuery, DataTables, AspNetCoreRateLimit, Unit testing, CI/CD' 
+                },
+                siteUrl: 'https://sntss.app/',
+                company: 'Sindicato Nacional de Trabajadores del Seguro Social',
+                role: 'Full Stack Developer',
+                description: { es: 'Plataforma web para sindicato con gestión de miembros, eventos y comunicados. Sistema completo de administración con panel de control y notificaciones.', en: 'Web platform for union with member management, events and communications. Complete administration system with control panel and notifications.' },
+                chips: [
+                    { icon: 'fa-react', key: 'skills.entity_framework', title: 'React Frontend' },
+                    { icon: 'fa-fire', key: 'skills.core_data', title: 'Firebase Backend' },
+                    { icon: 'fa-code', key: 'skills.rest_api', title: 'REST APIs' },
+                    { icon: 'fa-users', key: 'skills.testing', title: 'User Management' },
+                    { icon: 'fa-mobile-alt', key: 'skills.cicd', title: 'Responsive Design' }
+                ]
+            },
+            {
+                id: 'web-barber',
+                title: { es: 'Barber AR', en: 'Barber AR' },
+                tech: { 
+                    es: 'React, Firebase, Firestore, Tailwind CSS, EmailJS, Vite, React Router, CI/CD, Unit Testing', 
+                    en: 'React, Firebase, Firestore, Tailwind CSS, EmailJS, Vite, React Router, CI/CD, Unit Testing' 
+                },
+                siteUrl: 'https://barber-ar.web.app/',
+                company: 'Barber AR',
+                role: 'Full Stack Developer',
+                description: { es: 'Aplicación web para barberías con sistema de citas, gestión de clientes y catálogo de servicios. PWA con notificaciones push.', en: 'Web application for barbershops with appointment system, customer management and service catalog. PWA with push notifications' },
+                chips: [
+                    { icon: 'fa-react', key: 'skills.entity_framework', title: 'React Frontend' },
+                    { icon: 'fa-fire', key: 'skills.core_data', title: 'Firebase Realtime Database' },
+                    { icon: 'fa-calendar', key: 'skills.eventkit', title: 'Appointment System' },
+                    { icon: 'fa-bell', key: 'skills.notifications', title: 'Push Notifications' },
+                    { icon: 'fa-mobile-alt', key: 'skills.cicd', title: 'Progressive Web App' }
+                ]
+            }
+        ];
+
         function renderProjects() {
             const grid = document.getElementById('projects-grid');
             grid.innerHTML = '';
@@ -1821,6 +1877,42 @@
             }
         }
 
+        function renderWebProjects() {
+            const grid = document.getElementById('web-projects-grid');
+            grid.innerHTML = '';
+
+            webProjects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card fade-in-up';
+                card.innerHTML = `
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title[currentLang]}</h3>
+                        <p class="project-tech">${project.tech[currentLang]}</p>
+                        <p class="project-description">${project.description[currentLang]}</p>
+                        <div class="project-chips">
+                            ${project.chips.map((chip, index) => `
+                                <span class="chip" title="${chip.title}">
+                                    <i class="fas ${chip.icon}"></i>
+                                    <span data-i18n="${chip.key}">${translations[currentLang][chip.key]}</span>
+                                </span>
+                            `).join('')}
+                        </div>
+                        <div class="project-info">
+                            <p><strong>Company:</strong> ${project.company}</p>
+                            <p><strong>Role:</strong> ${project.role}</p>
+                        </div>
+                        <div class="project-actions">
+                            <a href="${project.siteUrl}" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-i18n="web.view">Visitar sitio</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1838,6 +1930,7 @@
 
         // Initialize projects
         renderProjects();
+        renderWebProjects();
         updateFeaturedApp();
 
         // Observe elements for animation (including dynamically created projects)
