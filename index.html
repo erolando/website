@@ -1856,7 +1856,7 @@
                 chips.innerHTML = featured.hero.chips.map((chip, index) => `
                     <span class="chip" title="${chip.title || `Chip ${index + 1}`}">
                         <i class="fas ${chip.icon}"></i>
-                        <span data-i18n="${chip.key}">${translations[currentLang][chip.key]}</span>
+                        <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
                     </span>
                 `).join('');
             }
