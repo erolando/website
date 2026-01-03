@@ -1197,7 +1197,8 @@
                     </div>
 
                     <!-- hCaptcha Widget -->
-                    <div class="h-captcha" data-captcha="true"></div>
+                    <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2">
+                    </div>
 
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
                         <i class="fas fa-paper-plane"></i>
@@ -1755,91 +1756,6 @@
             });
         });
 
-        // Contact form handling
-        document.getElementById('contact-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const form = this;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const successMessage = document.getElementById('success-message');
-
-            // Store original button content
-            const originalButtonHTML = '<i class="fas fa-paper-plane"></i> <span data-i18n="contact.send">Enviar Mensaje</span>';
-
-            // Add loading state
-            submitButton.classList.add('loading');
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span data-i18n="contact.sending">Enviando...</span>';
-            updateLanguage(currentLang);
-
-            try {
-                // Get hCaptcha response token
-                const hcaptchaResponse = form.querySelector('[name="h-captcha-response"]');
-
-                if (!hcaptchaResponse || !hcaptchaResponse.value) {
-                    throw new Error(currentLang === 'es'
-                        ? 'Por favor, completa la verificación de seguridad (hCaptcha)'
-                        : 'Please complete the security verification (hCaptcha)');
-                }
-
-                // Submit form using fetch
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    body: new FormData(form)
-                });
-
-                const data = await response.json();
-
-                if (response.ok && data.success) {
-                    // Show success message
-                    successMessage.classList.add('show');
-                    form.reset();
-
-                    // Reset hCaptcha
-                    if (typeof hcaptcha !== 'undefined') {
-                        hcaptcha.reset();
-                    }
-
-                    // Reset button
-                    submitButton.classList.remove('loading');
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalButtonHTML;
-                    updateLanguage(currentLang);
-
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.classList.remove('show');
-                    }, 5000);
-                } else {
-                    // Handle API error response
-                    throw new Error(data.message || `Error ${response.status}: ${response.statusText}`);
-                }
-            } catch (error) {
-                console.error('Form submission error:', error);
-
-                // Show user-friendly error message
-                const errorMsg = currentLang === 'es'
-                    ? `Error al enviar el mensaje: ${error.message}. Por favor, intenta nuevamente o contáctame por WhatsApp.`
-                    : `Error sending message: ${error.message}. Please try again or contact me via WhatsApp.`;
-
-                alert(errorMsg);
-
-                // Reset hCaptcha on error
-                if (typeof hcaptcha !== 'undefined') {
-                    hcaptcha.reset();
-                }
-
-                // Reset button
-                submitButton.classList.remove('loading');
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonHTML;
-                updateLanguage(currentLang);
-            }
-        });
-
         // Email obfuscation
         const emailLink = document.getElementById('email-link');
         if (emailLink) {
@@ -1854,9 +1770,10 @@
         // WhatsApp obfuscation
         document.getElementById('whatsapp-link').addEventListener('click', function (e) {
             e.preventDefault();
-            const phone = '528136387867';
+            const phone = '528136';
+            const phone2 = '387867';
             const message = currentLang === 'es' ? 'Hola' : 'Hello';
-            window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank');
+            window.open('https://wa.me/' + phone + phone2 + '?text=' + encodeURIComponent(message), '_blank');
         });
 
         // Mobile menu toggle
