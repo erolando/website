@@ -383,10 +383,37 @@
             color: var(--secondary);
             font-weight: 600;
             font-size: 0.85rem;
+            position: relative;
+            cursor: help;
         }
 
         .chip i {
             font-size: 0.9rem;
+        }
+
+        .chip:hover {
+            background: rgba(88, 86, 214, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .chip[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: var(--white);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 0.5rem;
+            max-width: 250px;
+            word-wrap: break-word;
         }
 
         /* Stats Section */
@@ -1528,10 +1555,17 @@
                     subtitle: { es: 'Auto Loan Team - Préstamos Automotrices', en: 'Auto Loan Team - Auto Loans' },
                     description: { es: 'Integración de funcionalidades para préstamos automotrices: pagos, transacciones, vehículos con pérdida total, liquidaciones y tarjetas de débito con GraphQL API y 80% cobertura de pruebas unitarias.', en: 'Integration of auto loan functionalities: payments, transactions, total loss vehicles, settlements and debit cards with GraphQL API and 80% unit test coverage.' },
                     chips: [
-                        { icon: 'fa-building-columns', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-chart-line', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-code', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-building-columns', key: 'skills.entity_framework', title: 'GraphQL API con 80% cobertura de pruebas' },
+                        { icon: 'fa-chart-line', key: 'hero.featured_app.chip2', title: 'Análisis de préstamos automotrices' },
+                        { icon: 'fa-vial', key: 'skills.testing', title: 'Unit Testing con XCTest' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip4', title: 'Desarrollo iOS nativo' },
+                        { icon: 'fa-rocket', key: 'skills.cicd', title: 'CI/CD con Jenkins' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1549,10 +1583,17 @@
                     subtitle: { es: 'Engagement and Retention Team', en: 'Engagement and Retention Team' },
                     description: { es: 'Diseño de soluciones para módulo de búsqueda y flujo Walmart Plus: productos similares, anuncios, membresías y perfiles de usuario con arquitectura MVP y CI/CD con Jenkins.', en: 'Design of solutions for search module and Walmart Plus flow: similar products, ads, memberships and user profiles with MVP architecture and CI/CD with Jenkins.' },
                     chips: [
-                        { icon: 'fa-shopping-cart', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-rocket', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-users', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-shopping-cart', key: 'hero.featured_app.chip1', title: 'E-commerce y retail' },
+                        { icon: 'fa-search', key: 'hero.featured_app.chip4', title: 'Módulo de búsqueda avanzado' },
+                        { icon: 'fa-cube', key: 'hero.featured_app.chip5', title: 'Arquitectura MVP' },
+                        { icon: 'fa-users', key: 'hero.featured_app.chip3', title: 'User Engagement & Retention' },
+                        { icon: 'fa-rocket', key: 'skills.cicd', title: 'CI/CD con Jenkins' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1570,10 +1611,17 @@
                     subtitle: { es: 'Prisma Account - Pagos QR', en: 'Prisma Account - QR Payments' },
                     description: { es: 'Implementación de pagos con QR, historial de transferencias y transferencias utilizando arquitectura MVVM con RxSwift y distribución mediante Firebase.', en: 'Implementation of QR payments, transfer history and transfers using MVVM architecture with RxSwift and distribution via Firebase.' },
                     chips: [
-                        { icon: 'fa-credit-card', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-qrcode', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-qrcode', key: 'skills.qr', title: 'Escaneo QR para pagos' },
+                        { icon: 'fa-database', key: 'skills.core_data', title: 'Core Data para persistencia' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip3', title: 'App iOS nativa' },
+                        { icon: 'fa-bolt', key: 'hero.featured_app.chip4', title: 'Arquitectura MVVM con RxSwift' },
+                        { icon: 'fa-cloud', key: 'hero.featured_app.chip5', title: 'Distribución con Firebase' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1591,10 +1639,17 @@
                     subtitle: { es: 'Hey Banco / Banregio - White Label', en: 'Hey Banco / Banregio - White Label' },
                     description: { es: 'Líder de desarrollo de proyecto White Label para lanzar dos apps con misma base de código pero diferente diseño. Implementación de Apple Wallet, flujos de seguridad para firma de transacciones y sistema de pagos CoDi.', en: 'Development leader of White Label project to launch two apps with same codebase but different design. Implementation of Apple Wallet, security flows for transaction signing and CoDi payment system.' },
                     chips: [
-                        { icon: 'fa-university', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-wallet', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-shield-halved', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-university', key: 'hero.featured_app.chip1', title: 'Sector financiero' },
+                        { icon: 'fa-wallet', key: 'hero.featured_app.chip2', title: 'Apple Wallet integration' },
+                        { icon: 'fa-shield-halved', key: 'hero.featured_app.chip3', title: 'Sistema CoDi y seguridad' },
+                        { icon: 'fa-code-branch', key: 'hero.featured_app.chip4', title: 'Arquitectura VIPER' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip5', title: 'White Label iOS & Android' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1612,10 +1667,17 @@
                     subtitle: { es: 'Apple Watch OS & Swift Migration', en: 'Apple Watch OS & Swift Migration' },
                     description: { es: 'Creación de app para Apple Watch OS y liderazgo de migración de Objective-C a Swift. Integración de nueva sección "Favoritos" en la app del periódico.', en: 'Creation of Apple Watch OS app and leadership of Objective-C to Swift migration. Integration of new "Favorites" section in the newspaper app.' },
                     chips: [
-                        { icon: 'fa-newspaper', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-clock', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-star', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-newspaper', key: 'hero.featured_app.chip1', title: 'Medio de comunicación' },
+                        { icon: 'fa-calendar', key: 'skills.eventkit', title: 'Apple Watch OS app' },
+                        { icon: 'fa-star', key: 'hero.featured_app.chip3', title: 'Sección Favoritos' },
+                        { icon: 'fa-exchange-alt', key: 'hero.featured_app.chip4', title: 'Migración Objective-C a Swift' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip5', title: 'Desarrollo multiplataforma' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1633,10 +1695,17 @@
                     subtitle: { es: 'Tu compañero de rutas y navegación', en: 'Your routes & navigation companion' },
                     description: { es: 'App de mapas y GPS para iPhone/iPad con navegación y rutas directas.', en: 'Maps & GPS app for iPhone/iPad with navigation and direct routes.' },
                     chips: [
-                        { icon: 'fa-map-location-dot', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-location-dot', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-route', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-map', key: 'skills.mapkit', title: 'MapKit integration' },
+                        { icon: 'fa-location-arrow', key: 'skills.core_location', title: 'Core Location GPS' },
+                        { icon: 'fa-route', key: 'hero.featured_app.chip3', title: 'Navegación y rutas directas' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip4', title: 'App iOS nativa' },
+                        { icon: 'fa-bolt', key: 'hero.featured_app.chip5', title: 'Alto rendimiento y optimización' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1654,10 +1723,17 @@
                     subtitle: { es: 'Gestiona eventos y calendarios', en: 'Manage events and calendars' },
                     description: { es: 'App para gestión de eventos y calendarios corporativos en iPhone/iPad.', en: 'App for corporate event and calendar management on iPhone/iPad.' },
                     chips: [
-                        { icon: 'fa-calendar', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-calendar-check', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-building', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-calendar', key: 'hero.featured_app.chip1', title: 'Gestión de eventos corporativos' },
+                        { icon: 'fa-calendar-check', key: 'hero.featured_app.chip2', title: 'Planificación y scheduling' },
+                        { icon: 'fa-building', key: 'hero.featured_app.chip3', title: 'Soluciones empresariales' },
+                        { icon: 'fa-users', key: 'hero.featured_app.chip4', title: 'Equipos cross-functionales' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip5', title: 'iPhone/iPad development' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1675,10 +1751,17 @@
                     subtitle: { es: 'Cotizaciones rápidas con QR', en: 'Quick quotes with QR' },
                     description: { es: 'App para generar cotizaciones instantáneas usando códigos QR en iPhone/iPad.', en: 'App for generating instant quotes using QR codes on iPhone/iPad.' },
                     chips: [
-                        { icon: 'fa-qrcode', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-calculator', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-bolt', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-qrcode', key: 'skills.qr', title: 'Escaneo QR para cotizaciones' },
+                        { icon: 'fa-calculator', key: 'hero.featured_app.chip2', title: 'Cálculos instantáneos' },
+                        { icon: 'fa-bolt', key: 'hero.featured_app.chip3', title: 'Rendimiento optimizado' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip4', title: 'App iOS nativa' },
+                        { icon: 'fa-chart-line', key: 'skills.graphql', title: 'Análisis de datos en tiempo real' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             },
             {
@@ -1696,10 +1779,17 @@
                     subtitle: { es: 'Celebrando 80 años de historia', en: 'Celebrating 80 years of history' },
                     description: { es: 'App oficial para conmemorar el 80 aniversario de la UANL en iPhone/iPad.', en: 'Official app to commemorate the 80th anniversary of UANL on iPhone/iPad.' },
                     chips: [
-                        { icon: 'fa-graduation-cap', key: 'hero.featured_app.chip1' },
-                        { icon: 'fa-calendar-days', key: 'hero.featured_app.chip2' },
-                        { icon: 'fa-building-columns', key: 'hero.featured_app.chip3' }
-                    ]
+                        { icon: 'fa-graduation-cap', key: 'hero.featured_app.chip1', title: 'Sector educativo' },
+                        { icon: 'fa-calendar-days', key: 'hero.featured_app.chip2', title: 'Conmemoración 80 años UANL' },
+                        { icon: 'fa-building-columns', key: 'hero.featured_app.chip3', title: 'Institución educativa' },
+                        { icon: 'fa-mobile-alt', key: 'hero.featured_app.chip4', title: 'App iOS conmemorativa' },
+                        { icon: 'fa-star', key: 'hero.featured_app.chip5', title: 'Proyecto institucional destacado' }
+                    ].map((chip, index) => `
+                        <span class="chip" title="${chip.title}" key="${chip.key}">
+                            <i class="fas ${chip.icon}"></i>
+                            <span data-i18n="${chip.key}">${translations[currentLang][chip.key] || `Chip ${index + 1}`}</span>
+                        </span>
+                    `).join('')
                 }
             }
         ];
