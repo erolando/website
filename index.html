@@ -512,6 +512,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            align-items: stretch;
         }
 
         .project-card {
@@ -536,6 +537,13 @@
 
         .project-content {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spacer {
+            flex-grow: 1;
+            min-height: 0.5rem;
         }
 
         .project-title {
@@ -573,6 +581,13 @@
 
         .project-tech i {
             color: var(--primary);
+        }
+
+        .project-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .project-link {
@@ -949,6 +964,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1064,8 +1080,9 @@
                 <div class="app-card">
                     <div class="app-card-header">
                         <div class="app-icon">
-    <img src="assets/proyectos/appIconBanregio.png" alt="Banregio App Icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
-</div>
+                            <img src="assets/proyectos/appIconBanregio.png" alt="Banregio App Icon"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                        </div>
                         <div id="featured-app-info">
                             <div class="kicker" data-i18n="hero.featured">Featured App</div>
                             <div class="app-title">App Ruta Directa</div>
@@ -1121,7 +1138,7 @@
     </section>
 
     <section class="section expertise" id="about">
-        <div class="container">            
+        <div class="container">
             <h2 class="section-title"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i><span
                     class="section-title-text" data-i18n="expertise.title">Experiencia Técnica</span></h2>
             <p class="section-subtitle" data-i18n="expertise.subtitle">Especializado en tecnologías modernas de
@@ -1768,39 +1785,58 @@
             {
                 id: 'web-sntss',
                 title: { es: 'SNTSS App', en: 'SNTSS App' },
-                tech: { 
-                    es: '.NET Core 8.0, ASP.NET Core, Dapper, SQL Server, SignalR, JWT, Swagger/OpenAPI, Sentry, Mailgun, Redis, EPPlus, ClosedXML, Razor Pages, Bootstrap 5, Tabler UI, jQuery, DataTables, AspNetCoreRateLimit, Unit testing, CI/CD', 
-                    en: '.NET Core 8.0, ASP.NET Core, Dapper, SQL Server, SignalR, JWT, Swagger/OpenAPI, Sentry, Mailgun, Redis, EPPlus, ClosedXML, Razor Pages, Bootstrap 5, Tabler UI, jQuery, DataTables, AspNetCoreRateLimit, Unit testing, CI/CD' 
+                tech: {
+                    es: '.NET Core 8.0, ASP.NET Core, Dapper, SQL Server, SignalR, JWT, Swagger/OpenAPI, Sentry, Mailgun, Redis, EPPlus, ClosedXML, Razor Pages, Bootstrap 5, Tabler UI, jQuery, DataTables, AspNetCoreRateLimit, Unit testing, CI/CD',
+                    en: '.NET Core 8.0, ASP.NET Core, Dapper, SQL Server, SignalR, JWT, Swagger/OpenAPI, Sentry, Mailgun, Redis, EPPlus, ClosedXML, Razor Pages, Bootstrap 5, Tabler UI, jQuery, DataTables, AspNetCoreRateLimit, Unit testing, CI/CD'
                 },
                 siteUrl: 'https://sntss.app/',
                 company: 'Sindicato Nacional de Trabajadores del Seguro Social',
                 role: 'Full Stack Developer',
                 description: { es: 'Plataforma web para sindicato con gestión de miembros, eventos y comunicados. Sistema completo de administración con panel de control y notificaciones.', en: 'Web platform for union with member management, events and communications. Complete administration system with control panel and notifications.' },
                 chips: [
-                    { icon: 'fa-react', key: 'skills.entity_framework', title: 'React Frontend' },
-                    { icon: 'fa-fire', key: 'skills.core_data', title: 'Firebase Backend' },
-                    { icon: 'fa-code', key: 'skills.rest_api', title: 'REST APIs' },
-                    { icon: 'fa-users', key: 'skills.testing', title: 'User Management' },
-                    { icon: 'fa-mobile-alt', key: 'skills.cicd', title: 'Responsive Design' }
+                    { title: '.NET Core 8.0' },
+                    { title: 'ASP.NET Core' },
+                    { title: 'Dapper' },
+                    { title: 'SQL Server' },
+                    { title: 'SignalR' },
+                    { title: 'JWT' },
+                    { title: 'Swagger/OpenAPI' },
+                    { title: 'Sentry' },
+                    { title: 'Mailgun' },
+                    { title: 'Redis' },
+                    { title: 'EPPlus' },
+                    { title: 'ClosedXML' },
+                    { title: 'Razor Pages' },
+                    { title: 'Bootstrap 5' },
+                    { title: 'Tabler UI' },
+                    { title: 'jQuery' },
+                    { title: 'DataTables' },
+                    { title: 'AspNetCoreRateLimit' },
+                    { title: 'Unit testing' },
+                    { title: 'CI/CD' }
                 ]
             },
             {
                 id: 'web-barber',
                 title: { es: 'Barber AR', en: 'Barber AR' },
-                tech: { 
-                    es: 'React, Firebase, Firestore, Tailwind CSS, EmailJS, Vite, React Router, CI/CD, Unit Testing', 
-                    en: 'React, Firebase, Firestore, Tailwind CSS, EmailJS, Vite, React Router, CI/CD, Unit Testing' 
+                tech: {
+                    es: 'React, Firebase, Firestore, Tailwind CSS, EmailJS, Vite, React Router, CI/CD, Unit Testing',
+                    en: 'React, Firebase, Firestore, Tailwind CSS, EmailJS, Vite, React Router, CI/CD, Unit Testing'
                 },
                 siteUrl: 'https://barber-ar.web.app/',
                 company: 'Barber AR',
                 role: 'Full Stack Developer',
                 description: { es: 'Aplicación web para barberías con sistema de citas, gestión de clientes y catálogo de servicios. PWA con notificaciones push.', en: 'Web application for barbershops with appointment system, customer management and service catalog. PWA with push notifications' },
                 chips: [
-                    { icon: 'fa-react', key: 'skills.entity_framework', title: 'React Frontend' },
-                    { icon: 'fa-fire', key: 'skills.core_data', title: 'Firebase Realtime Database' },
-                    { icon: 'fa-calendar', key: 'skills.eventkit', title: 'Appointment System' },
-                    { icon: 'fa-bell', key: 'skills.notifications', title: 'Push Notifications' },
-                    { icon: 'fa-mobile-alt', key: 'skills.cicd', title: 'Progressive Web App' }
+                    { title: 'React' },
+                    { title: 'Firebase' },
+                    { title: 'Firestore' },
+                    { title: 'Tailwind CSS' },
+                    { title: 'EmailJS' },
+                    { title: 'Vite' },
+                    { title: 'React Router' },
+                    { title: 'CI/CD' },
+                    { title: 'Unit Testing' }
                 ]
             }
         ];
@@ -1825,6 +1861,7 @@
                             <i class="fas ${project.icon}" aria-hidden="true"></i>
                             <span>${project.tech[currentLang]}</span>
                         </p>
+                        ${project.hero && project.hero.description ? `<p class="project-description">${project.hero.description[currentLang]}</p>` : ''}
                         <a href="${project.appStoreUrl}" target="_blank" class="project-link">
                             <i class="fab fa-apple" aria-hidden="true"></i>
                             <span data-i18n="projects.view">Ver en</span> App Store →
@@ -1887,16 +1924,15 @@
                 card.innerHTML = `
                     <div class="project-content">
                         <h3 class="project-title">${project.title[currentLang]}</h3>
-                        <p class="project-tech">${project.tech[currentLang]}</p>
                         <p class="project-description">${project.description[currentLang]}</p>
                         <div class="project-chips">
                             ${project.chips.map((chip, index) => `
                                 <span class="chip" title="${chip.title}">
-                                    <i class="fas ${chip.icon}"></i>
-                                    <span data-i18n="${chip.key}">${translations[currentLang][chip.key]}</span>
+                                    <span>${chip.title}</span>
                                 </span>
                             `).join('')}
                         </div>
+                        <div class="spacer"></div>
                         <div class="project-info">
                             <p><strong>Company:</strong> ${project.company}</p>
                             <p><strong>Role:</strong> ${project.role}</p>
@@ -1942,10 +1978,26 @@
         });
 
         // Update featured app on language change
+        // Update featured app on language change
         const originalUpdateLanguage = updateLanguage;
         updateLanguage = function (lang) {
+            // First update state and existing static elements
             originalUpdateLanguage(lang);
+
+            // Re-render dynamic project grids with new language content
+            renderProjects();
+            renderWebProjects();
             updateFeaturedApp();
+
+            // Re-apply translations to newly rendered elements in the grids
+            // This is necessary because the render functions might inject HTML with default (Spanish) text 
+            // for elements that rely on data-i18n (like buttons)
+            document.querySelectorAll('#projects-grid [data-i18n], #web-projects-grid [data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
         };
 
         // Smooth scrolling
@@ -1996,22 +2048,22 @@
         // Contact form handling
         const contactForm = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
-        
+
         if (contactForm) {
             contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 // Add loading state
                 const formContainer = contactForm.closest('.contact-form');
                 const submitButton = contactForm.querySelector('button[type="submit"]');
                 const originalButtonText = submitButton.innerHTML;
-                
+
                 formContainer.classList.add('form-loading');
                 submitButton.disabled = true;
-                
+
                 // Submit form using fetch
                 const formData = new FormData(contactForm);
-                
+
                 fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
@@ -2019,41 +2071,41 @@
                         'Accept': 'application/json'
                     }
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Show success message
-                        successMessage.classList.add('show');
-                        
-                        // Reset form
-                        contactForm.reset();
-                        
-                        // Hide success message after 5 seconds
-                        setTimeout(() => {
-                            successMessage.classList.remove('show');
-                        }, 5000);
-                        
-                        // Scroll to success message
-                        successMessage.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    } else {
-                        // Handle error
-                        console.error('Form submission failed:', data);
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Show success message
+                            successMessage.classList.add('show');
+
+                            // Reset form
+                            contactForm.reset();
+
+                            // Hide success message after 5 seconds
+                            setTimeout(() => {
+                                successMessage.classList.remove('show');
+                            }, 5000);
+
+                            // Scroll to success message
+                            successMessage.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        } else {
+                            // Handle error
+                            console.error('Form submission failed:', data);
+                            alert(currentLang === 'es' ? 'Error al enviar el formulario. Inténtalo de nuevo.' : 'Error submitting form. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Form submission error:', error);
                         alert(currentLang === 'es' ? 'Error al enviar el formulario. Inténtalo de nuevo.' : 'Error submitting form. Please try again.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Form submission error:', error);
-                    alert(currentLang === 'es' ? 'Error al enviar el formulario. Inténtalo de nuevo.' : 'Error submitting form. Please try again.');
-                })
-                .finally(() => {
-                    // Remove loading state
-                    formContainer.classList.remove('form-loading');
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalButtonText;
-                });
+                    })
+                    .finally(() => {
+                        // Remove loading state
+                        formContainer.classList.remove('form-loading');
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    });
             });
         }
     </script>
