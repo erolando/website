@@ -792,6 +792,12 @@
             overflow: hidden;
         }
 
+        .cf-turnstile {
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
         .contact-buttons {
             display: flex;
             gap: 1rem;
@@ -967,8 +973,8 @@
         }
     </style>
 
-    <!-- hCaptcha Script -->
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <!-- Cloudflare Turnstile Script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -1269,17 +1275,14 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
 
-                    <!-- hCaptcha Widget -->
-                    <div class="h-captcha" data-captcha="true"></div>
+                    <!-- Cloudflare Turnstile Widget -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACKWQUyws65Yp4zV"></div>
 
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
                         <i class="fas fa-paper-plane"></i>
                         <span data-i18n="contact.send">Enviar Mensaje</span>
                     </button>
                 </form>
-
-                <!-- Web3Forms Client Script for hCaptcha -->
-                <script src="https://web3forms.com/client/script.js" async defer></script>
 
                 <div class="contact-buttons">
 
