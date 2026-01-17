@@ -2187,21 +2187,6 @@
             observer.observe(el);
         });
 
-        // Update featured app on language change
-        const originalUpdateLanguage = updateLanguage;
-        updateLanguage = function (lang) {
-            // First update state and existing static elements
-            originalUpdateLanguage(lang);
-
-            // Re-render dynamic project grids with new language content
-            setTimeout(() => {
-                renderProjects();
-                renderWebProjects();
-                renderCertifications();
-                updateFeaturedApp();
-            }, 10);
-        };
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
