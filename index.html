@@ -2188,27 +2188,18 @@
         });
 
         // Update featured app on language change
-        // Update featured app on language change
         const originalUpdateLanguage = updateLanguage;
         updateLanguage = function (lang) {
             // First update state and existing static elements
             originalUpdateLanguage(lang);
 
             // Re-render dynamic project grids with new language content
-            renderProjects();
-            renderWebProjects();
-            renderCertifications();
-            updateFeaturedApp();
-
-            // Re-apply translations to newly rendered elements in the grids
-            // This is necessary because the render functions might inject HTML with default (Spanish) text 
-            // for elements that rely on data-i18n (like buttons)
-            document.querySelectorAll('#projects-grid [data-i18n], #web-projects-grid [data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
+            setTimeout(() => {
+                renderProjects();
+                renderWebProjects();
+                renderCertifications();
+                updateFeaturedApp();
+            }, 10);
         };
 
         // Smooth scrolling
