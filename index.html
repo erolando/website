@@ -643,6 +643,50 @@
             gap: 1rem;
         }
 
+        /* Certification Styles */
+        .certification-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .certification-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            border-radius: 50%;
+        }
+
+        .certification-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .certification-platform {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .certification-category {
+            font-size: 0.8rem;
+            color: var(--gray);
+            background: var(--gray-light);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            display: inline-block;
+            width: fit-content;
+        }
+
         /* Contact Section */
         .contact {
             padding: 4rem 2rem;
@@ -1261,6 +1305,15 @@
         <div class="projects-grid" id="web-projects-grid"></div>
     </section>
 
+    <!-- Certifications Section -->
+    <section class="projects" id="certifications">
+        <h2 class="section-title"><i class="fas fa-certificate" aria-hidden="true"></i><span class="section-title-text"
+                data-i18n="certifications.title">Certificaciones</span></h2>
+        <p class="section-subtitle" data-i18n="certifications.subtitle">Cursos y certificaciones profesionales</p>
+
+        <div class="projects-grid" id="certifications-grid"></div>
+    </section>
+
     <section class="section process" id="process">
         <div class="container">            
             <h2 class="section-title"><i class="fas fa-route" aria-hidden="true"></i><span class="section-title-text"
@@ -1416,6 +1469,10 @@
                 'web.title': 'Sistemas Web',
                 'web.subtitle': 'Aplicaciones web que he desarrollado',
                 'web.view': 'Visitar sitio',
+                'certifications.title': 'Certificaciones',
+                'certifications.subtitle': 'Cursos y certificaciones profesionales',
+                'certifications.view': 'Ver certificado',
+                'certifications.platform': 'Plataforma',
                 'projects.app1.title': 'App Ruta Directa',
                 'projects.app1.tech': 'iPhone, iPad - Mapas, GPS',
                 'projects.app2.title': 'App Eventos Grainger',
@@ -1504,6 +1561,10 @@
                 'web.title': 'Web Systems',
                 'web.subtitle': 'Web applications I\'ve developed',
                 'web.view': 'Visit site',
+                'certifications.title': 'Certifications',
+                'certifications.subtitle': 'Professional courses and certifications',
+                'certifications.view': 'View Certificate',
+                'certifications.platform': 'Platform',
                 'projects.app1.title': 'App Ruta Directa',
                 'projects.app1.tech': 'iPhone, iPad - Maps, GPS',
                 'projects.app2.title': 'App Eventos Grainger',
@@ -1878,9 +1939,67 @@
             }
         ];
 
+        // Certifications
+        const certifications = [
+            {
+                id: 'ios-swift-57',
+                title: { es: 'iOS and Swift 5.7 Complete Course from Zero to Professional', en: 'iOS and Swift 5.7 Complete Course from Zero to Professional' },
+                platform: { es: 'Udemy', en: 'Udemy' },
+                platformUrl: 'http://ude.my/UC-f33f4bb6-b549-4a50-a2a0-fa06cc319fc3',
+                icon: 'fa-brands fa-apple',
+                category: { es: 'Desarrollo Móvil', en: 'Mobile Development' },
+                certificateFile: 'UC-f33f4bb6-b549-4a50-a2a0-fa06cc319fc3.pdf'
+            },
+            {
+                id: 'net8-esencial',
+                title: { es: '.NET 8 essential', en: '.NET 8 essential' },
+                platform: { es: 'LinkedIn Learning', en: 'LinkedIn Learning' },
+                platformUrl: 'https://www.linkedin.com/learning/certificates/fc1e1e9dbc597803eb7e3f205ea3b1b9a336cfb7c03640ceb535cae164ff98d9',
+                icon: 'fa-brands fa-microsoft',
+                category: { es: 'Desarrollo Web', en: 'Web Development' },
+                certificateFile: 'CertificadoDeFinalizacion_.NET_8_esencial.pdf'
+            },
+            {
+                id: 'asp-net-mvc5',
+                title: { es: 'Microsoft ASP NET MVC 5 (OWIN + KATANA)', en: 'Microsoft ASP NET MVC 5 (OWIN + KATANA)' },
+                platform: { es: 'Udemy', en: 'Udemy' },
+                platformUrl: 'http://ude.my/UC-f2bc2d9f-f948-4392-b36c-1372760976e2',
+                icon: 'fa-brands fa-microsoft',
+                category: { es: 'Desarrollo Web', en: 'Web Development' },
+                certificateFile: 'UC-f2bc2d9f-f948-4392-b36c-1372760976e2.pdf'
+            },
+            {
+                id: 'microservices-netcore',
+                title: { es: 'Microservices with .NET Core 3 up to its publication on Azure', en: 'Microservices with .NET Core 3 up to its publication on Azure' },
+                platform: { es: 'Udemy', en: 'Udemy' },
+                platformUrl: 'http://ude.my/UC-e24f4caa-f0b8-4bf6-82a6-1a1c44d66a95',
+                icon: 'fa-brands fa-microsoft',
+                category: { es: 'Desarrollo Web', en: 'Web Development' },
+                certificateFile: 'UC-e24f4caa-f0b8-4bf6-82a6-1a1c44d66a95.pdf'
+            },
+            {
+                id: 'asp-net-mvc-ef',
+                title: { es: 'Asp.Net MVC + Entity Framework Course for Beginners', en: 'Asp.Net MVC + Entity Framework Course for Beginners' },
+                platform: { es: 'Udemy', en: 'Udemy' },
+                platformUrl: 'http://ude.my/UC-14be8fe4-a604-4c8b-a790-f957921e27bd',
+                icon: 'fa-brands fa-microsoft',
+                category: { es: 'Desarrollo Web', en: 'Web Development' },
+                certificateFile: 'UC-14be8fe4-a604-4c8b-a790-f957921e27bd.pdf'
+            },
+            {
+                id: 'signalr-realtime',
+                title: { es: 'Real-Time Web Applications with ASP.NET Core SignalR', en: 'Real-Time Web Applications with ASP.NET Core SignalR' },
+                platform: { es: 'Udemy', en: 'Udemy' },
+                platformUrl: 'http://ude.my/UC-80182119-b66a-490d-bf1f-019ec5034b65',
+                icon: 'fa-brands fa-microsoft',
+                category: { es: 'Desarrollo Web', en: 'Web Development' },
+                certificateFile: 'UC-80182119-b66a-490d-bf1f-019ec5034b65.pdf'
+            }
+        ];
+
         function renderProjects() {
-            const grid = document.getElementById('projects-grid');
-            grid.innerHTML = '';
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = '';
 
             projects.forEach(project => {
                 const card = document.createElement('div');
@@ -1905,7 +2024,7 @@
                         </a>
                     </div>
                 `;
-                grid.appendChild(card);
+                projectsGrid.appendChild(card);
             });
 
             // Re-apply i18n to new elements
@@ -1986,6 +2105,48 @@
             });
         }
 
+        function renderCertifications() {
+            const grid = document.getElementById('certifications-grid');
+            grid.innerHTML = '';
+
+            certifications.forEach(cert => {
+                const card = document.createElement('div');
+                card.className = 'project-card fade-in-up';
+                card.innerHTML = `
+                    <div class="project-content">
+                        <div class="certification-header">
+                            <i class="${cert.icon} certification-icon"></i>
+                            <div class="certification-meta">
+                                <span class="certification-platform">${cert.platform[currentLang]}</span>
+                                <span class="certification-category">${cert.category[currentLang]}</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">${cert.title[currentLang]}</h3>
+                        <div class="spacer"></div>
+                        <div class="project-actions">
+                            <a href="${cert.platformUrl}" target="_blank" class="btn btn-secondary">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-i18n="certifications.platform">Plataforma</span>
+                            </a>
+                            <button class="btn btn-primary" onclick="viewCertificate('${cert.certificateFile}')">
+                                <i class="fas fa-file-pdf"></i>
+                                <span data-i18n="certifications.view">Ver certificado</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Certificate viewer with obfuscated URL
+        function viewCertificate(filename) {
+            // Simple obfuscation using base64 encoding
+            const encoded = btoa(filename);
+            const certificateUrl = `api/certificate.php?file=${encoded}`;
+            window.open(certificateUrl, '_blank');
+        }
+
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -2004,6 +2165,7 @@
         // Initialize projects
         renderProjects();
         renderWebProjects();
+        renderCertifications();
         updateFeaturedApp();
 
         // Observe elements for animation (including dynamically created projects)
@@ -2024,6 +2186,7 @@
             // Re-render dynamic project grids with new language content
             renderProjects();
             renderWebProjects();
+            renderCertifications();
             updateFeaturedApp();
 
             // Re-apply translations to newly rendered elements in the grids
