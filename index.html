@@ -1277,7 +1277,8 @@
                                 Data</span></span>
                         <span class="chip"><i class="fas fa-calendar"></i><span
                                 data-i18n="skills.eventkit">EventKit</span></span>
-                        <span class="chip"><i class="fas fa-car"></i><span data-i18n="skills.carplay">Car Play</span></span>
+                        <span class="chip"><i class="fas fa-car"></i><span data-i18n="skills.carplay">Car
+                                Play</span></span>
                         <span class="chip"><i class="fas fa-bell"></i><span data-i18n="skills.notifications">Push
                                 Notifications</span></span>
                         <span class="chip"><i class="fas fa-project-diagram"></i><span
@@ -1326,7 +1327,7 @@
     </section>
 
     <section class="section process" id="process">
-        <div class="container">            
+        <div class="container">
             <h2 class="section-title"><i class="fas fa-route" aria-hidden="true"></i><span class="section-title-text"
                     data-i18n="process.title">Proceso de Desarrollo</span></h2>
             <p class="section-subtitle" data-i18n="process.subtitle">Un enfoque sistemático para construir apps móviles
@@ -1647,6 +1648,10 @@
         document.getElementById('lang-toggle').addEventListener('click', function () {
             const newLang = currentLang === 'es' ? 'en' : 'es';
             updateLanguage(newLang);
+            renderWebProjects();
+            renderCertifications();
+            updateFeaturedApp();
+            renderProjects(); // This calls updateLanguage internally, ensuring all new elements are translated
         });
 
         // Initialize language
@@ -1716,8 +1721,10 @@
                 hero: {
                     title: { es: 'Grupo Region', en: 'Grupo Region' },
                     subtitle: { es: 'Modulos de Noticias, Multimedia y Radio ', en: 'News, Multimedia and Radio modules' },
-                    description: { es: 'Implementación de módulos de noticias, multimedia y radio, soporte Radio en CarPlay.',
-                     en: 'Implementation of news, multimedia and radio modules, Radio support in CarPlay.' },
+                    description: {
+                        es: 'Implementación de módulos de noticias, multimedia y radio, soporte Radio en CarPlay.',
+                        en: 'Implementation of news, multimedia and radio modules, Radio support in CarPlay.'
+                    },
                     chips: [
                         { icon: 'fa-file-pdf', key: 'skills.mapkit', title: 'PDF Reader' },
                         { icon: 'fa-car', key: 'skills.qr', title: 'Car Play' },

@@ -1,6 +1,43 @@
 # website
 Portfolio
 
+## Development Learnings & Best Practices
+
+### 🎯 Language Switch Implementation - Lesson Learned
+
+**Problem**: Language switching button caused page freezing/unusual behavior.
+
+**❌ Wrong Approach (Over-engineering)**:
+```javascript
+// Complex function overriding with async callbacks
+const originalUpdateLanguage = updateLanguage;
+updateLanguage = function (lang) {
+    originalUpdateLanguage(lang);
+    setTimeout(() => { /* complex async operations */ }, 10);
+};
+```
+
+**✅ Correct Approach (Simple & Direct)**:
+```javascript
+document.getElementById('lang-toggle').addEventListener('click', function () {
+    const newLang = currentLang === 'es' ? 'en' : 'es';
+    updateLanguage(newLang);
+    renderWebProjects();
+    renderCertifications();
+    updateFeaturedApp();
+    renderProjects();
+});
+```
+
+**Key Learnings**:
+1. **Simplicity over complexity** - Don't overcomplicate simple problems
+2. **Trust existing code flow** - `renderProjects()` already handles translations internally
+3. **Sequential operations** - Most operations are lightweight enough to be synchronous
+4. **Avoid premature optimization** - Don't assume async is needed without profiling
+
+**Principle**: "Less code is more maintainable. Confidence in existing design over reinvention."
+
+---
 
 ## Certifications:
 
